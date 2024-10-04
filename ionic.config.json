@@ -1,0 +1,7 @@
+{
+  "name": "front-barberia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
