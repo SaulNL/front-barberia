@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- INICIA FORMULARIO LOGIN -->
+<ion-content>
+  <ion-card> 
+    <ion-avatar class="avatar">
+      <img alt="Usuario" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+
+    <ion-card-header>
+      <ion-card-title class="titulo">Iniciar sesión</ion-card-title>
+    </ion-card-header>
+    
+   
+    <ion-card-content>
+      <form [formGroup]="formulariologin">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+       </form>
+     <br>
+
+      <ion-button shape="block"  (click)="ingresar()">
+        Iniciar sesión
+      </ion-button>
+    
+      
+      <ion-buttons class="registrarse">
+        <ion-text color="medium">
+          <h2>¿Eres nuevo?</h2>
+        </ion-text>
+        <ion-button [routerLink]="['/registro-cliente']" mode="ios"  color="medium">Regístrate</ion-button>
+      </ion-buttons>
+     
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- AQUI TERMINA FORMULARIO LOGIN -->
+
+<ion-footer>
+  <!-- <ion-toolbar  color="primary">
+
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/registro-cliente']">Registrarse</ion-button>
+    </ion-buttons>
+  </ion-toolbar> -->
+</ion-footer>
