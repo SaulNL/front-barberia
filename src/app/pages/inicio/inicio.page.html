@@ -1,0 +1,95 @@
+
+<app-header></app-header>  <!-- Usas el selector del HeaderComponent -->
+
+ <ion-content scrollY="false">
+
+  <!-- <swiper-container
+   #swiper
+   [options]="slideOpts"
+   (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)" 
+    [loop]="true" 
+    [pagination]="true"
+    [zoom]="true"
+
+  >
+    <swiper-slide *ngFor="let image of images">
+      <div class="swiper-zoom-container">
+        <img [src]="image">
+
+    
+      </div>
+
+           
+    </swiper-slide> 
+  </swiper-container> -->
+
+
+
+  <swiper-container
+  #swiper
+  [options]="slideOpts"
+  (afterInit)="swiperReady()"
+  (slideChange)="swiperSlideChanged($event)"  
+  [pagination]="true"
+  [zoom]="true"
+  [loop]="true"
+>
+  <swiper-slide *ngFor="let image of images">
+    <div class="contenendor-imagen">
+      <img  class="imagen" [src]="image">
+      <ion-button class="boton-cita">Agenda tu cita</ion-button>
+    </div>
+  </swiper-slide>
+</swiper-container>
+<div align="center">
+<ion-icon class="icono" name="caret-down-circle-outline"></ion-icon>
+</div>
+
+</ion-content>  
+
+<!-- ejemplos de como manejar las citas -->
+<!-- <ion-content>  -->
+  <!-- mandamos atraer el componente card-entrada para mostrar las entradas registradas-->
+ <!-- <app-card-entrada [entrada]="entradaActual" (eventoGuardar)="guardar($event)"></app-card-entrada> -->
+ <!-- </ion-content> -->
+
+<ion-footer class="fondo-rojo2">
+  
+  <ion-segment value="heart">
+    <ion-segment-button value="home">
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+
+ 
+    <ion-segment-button value="search-outline">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-segment-button>
+
+
+    <ion-segment-button value="person-circle-outline">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-segment-button>
+
+ 
+  </ion-segment>
+  
+  <!--Esto es iconos con texto  -->
+  
+  <!-- <ion-segment value="heart">
+    <ion-segment-button value="call">
+      <ion-label>Call</ion-label>
+      <ion-icon name="call"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-label>Heart</ion-label>
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-label>Pin</ion-label>
+      <ion-icon name="pin"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>   -->
+
+  
+</ion-footer>

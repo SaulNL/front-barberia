@@ -1,0 +1,64 @@
+/*******banner*********/
+
+swiper-container {
+  --swiper-pagination-color: #ff3842 !important;  
+  --swiper-pagination-bullet-inactive-color: rgb(252, 248, 248) !important; 
+}
+
+swisper-container {
+  width: 100%;
+  height: 100%;  
+}
+
+swiper-slide {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+.imagen{
+  filter: brightness(50%);
+}
+
+.boton-cita {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: white;
+  font-size: 4vw;
+  width: 44%;
+  height: 5%;
+}
+
+  /*********************Ocultar el scrollbar en navegadores***********************/
+  .categorias-contenedor{
+    /*Edge*/
+    -ms-overflow-style: none;
+    /*Firefox */
+    scrollbar-width: none;
+ }
+
+ /*Chrome y Safari*/
+ .categorias-contenedor::-webkit-scrollbar {
+   display: none;
+ }
+
+ /*******Imagen principal y boton agendar************/
+
+.btn-redondo{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 170px;
+  top: 10px;
+  z-index: 10;
+}
+ .icono{
+  font-size: xx-large;
+  color: black;
+ }
+
+  

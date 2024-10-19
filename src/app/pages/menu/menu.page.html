@@ -1,0 +1,42 @@
+<ion-split-pane contentId="main">
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-menu-toggle>
+    <ion-toolbar color="primary">    
+        <ion-title>Los mostacho</ion-title>
+          <span type="button" slot="end" class="btn-salir" style="z-index: 10;"><ion-icon style="z-index: 10;" name="close-outline"></ion-icon></span> 
+        </ion-toolbar>
+      </ion-menu-toggle>
+        
+      <!-- </ion-toolbar> -->
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let pagina of paginas; let i = index">
+          <ion-item (click)="cambiarIndiceSeleccionado(i)" routerDirection="root" [routerLink]="[pagina.url]"
+            lines="none" detail="false" [class.selected]="indiceSeleccionado == i">
+            <ion-icon slot="start" [name]="pagina.icono + '-outline'"></ion-icon>
+            <ion-label>{{pagina.titulo}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="salir()" routerDirection="root" lines="none" detail="false">
+            <ion-icon slot="start" [name]="'exit-outline'"></ion-icon>
+            <ion-label>Salir</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    
+     
+    
+    </ion-content>
+    <p align="center">Contactanos</p>      
+    <div class="redes-sociales"> 
+      <a href="#"class="icon"><ion-icon class="fab fa-whatsapp"></ion-icon> </a>
+      <a href="#"class="icon"><ion-icon class="fab fa-instagram"></ion-icon> </a>
+     </div> 
+  </ion-menu>
+<!-- ion-router-outlet 
+ funciona como un z-index en css pero en este caso se aplican en html
+ *siempre va a estar adelante de todos los page que existan
+-->
+  <ion-router-outlet id="main" main></ion-router-outlet>
+</ion-split-pane>
