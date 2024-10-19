@@ -11,6 +11,11 @@
 
 /*Para iconos de ionic*/
  @import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+/*Para la tipografia*/
+@import '~typeface-lato/index.css';
+
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -69,14 +74,8 @@
   background: #34502b;
 }
 
-ion-header{
-  --background-color: #941f1f !important;
-  --background: #941f1f;
-}
 
-ion-footer{
-  background-color: #941f1f;
-}
+
 .colores{
 color: #941f1f ;
 color: #ce6b5d ;

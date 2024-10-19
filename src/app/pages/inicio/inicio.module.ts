@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -8,6 +8,7 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
 import { ModuloComponentesModule } from '../../components/modulo-componentes.module';
+import { SharedModule } from 'src/app/shared/components/shared.module';
 
 @NgModule({
   imports: [
@@ -16,8 +17,10 @@ import { ModuloComponentesModule } from '../../components/modulo-componentes.mod
     IonicModule,
     InicioPageRoutingModule,
     //importamos el modulo de para los componentes para poder usarlos en los pages
-    ModuloComponentesModule
+    ModuloComponentesModule,
+    SharedModule
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InicioPageModule {}

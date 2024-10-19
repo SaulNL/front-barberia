@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
 import { InfiniteScrollCustomEvent, ToastController } from '@ionic/angular';
 import * as moment from 'moment';
-
+import Swiper from 'swiper';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+
   fecha: string;
   entradas: Array<{
     fecha: string,
@@ -28,15 +29,62 @@ export class InicioPage implements OnInit {
 
   items:any []=[];
 
+ //PARA EL BANNER  
+  // Opciones del slider
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    slidesPerView: 1,  // Cambiado a 1
+    slidesPerGroup: 1, // Cambiado a 1
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+  };
+
+  @ViewChild('swiper') swiperRef: ElementRef | undefined;
+  swiper?: Swiper;
+
+  images = [
+    'assets/imagenes/barbería.png',
+    'assets/imagenes/barbería (1).png',
+    'assets/imagenes/Losmostacho.png',
+  ]
+ 
   constructor(public toastController: ToastController) {
     moment.locale('es-mx');
     this.fecha = moment().format();
     this.cargarEntradas();
   }
 
+
   ngOnInit() {
+   
+   
+
     this.generateItems();
   }
+  ngAfterViewInit() {
+    this.swiperReady(); // Asegúrate de que swiper esté listo después de que la vista se haya inicializado
+  }
+
+  swiperReady() {
+    this.swiper = this.swiperRef?.nativeElement.swiper;
+  }
+
+  goNext() {
+    this.swiper?.slideNext();
+  }
+
+  goPrev() {
+    this.swiper?.slidePrev();
+  }
+
+  swiperSlideChanged(e: any) {
+    console.log('cambiado', e);
+  }
+
 
   private generateItems() {
     const count = this.items.length + 1;
