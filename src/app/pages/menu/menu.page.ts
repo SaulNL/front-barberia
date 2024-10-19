@@ -19,6 +19,42 @@ export class MenuPage implements OnInit {
       titulo: 'Entradas',
       url: '/menu/entradas',
       icono: 'book'
+    },
+    {
+      titulo: 'Productos',
+      url: '/menu/entradas',
+      icono: 'car'
+    },
+    {
+      titulo: 'Cortes',
+      url: '/menu/entradas',
+      icono: 'cut'
+    },
+    {
+      titulo: 'Citas agendadas',
+      url: '/menu/entradas',
+      icono: 'calendar'
+    },
+    {
+      titulo: 'Agendar citas',
+      url: '/menu/entradas',
+      icono: 'calendar-clear'
+    },
+    {
+      titulo: 'Favoritos',
+      url: '/menu/entradas',
+      icono: 'heart'
+    }
+    ,
+    {
+      titulo: 'Bolsa de compra',
+      url: '/menu/entradas',
+      icono: 'bag-handle'
+    },
+    {
+      titulo: 'Apartados',
+      url: '/menu/entradas',
+      icono: 'archive'
     }
   ]
 

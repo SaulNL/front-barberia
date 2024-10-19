@@ -1,102 +1,60 @@
-<ion-header class="fondo-rojo2">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
+
+<app-header></app-header>  <!-- Usas el selector del HeaderComponent -->
+
+ <ion-content scrollY="false">
+
+  <!-- <swiper-container
+   #swiper
+   [options]="slideOpts"
+   (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)" 
+    [loop]="true" 
+    [pagination]="true"
+    [zoom]="true"
+
+  >
+    <swiper-slide *ngFor="let image of images">
+      <div class="swiper-zoom-container">
+        <img [src]="image">
+
+    
+      </div>
+
+           
+    </swiper-slide> 
+  </swiper-container> -->
 
 
-<ion-content class="fondo-beich">
-<!-- Iran las imagenes de las categorias -->
-  <!-- <div class="categorias-contenedor" style="background: black;">
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Categoría 1</div>
+
+  <swiper-container
+  #swiper
+  [options]="slideOpts"
+  (afterInit)="swiperReady()"
+  (slideChange)="swiperSlideChanged($event)"  
+  [pagination]="true"
+  [zoom]="true"
+  [loop]="true"
+>
+  <swiper-slide *ngFor="let image of images">
+    <div class="contenendor-imagen">
+      <img  class="imagen" [src]="image">
+      <ion-button class="boton-cita">Agenda tu cita</ion-button>
     </div>
-
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Categoría Larga 2</div>
-    </div>
-
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Pin 3</div>
-    </div>
-
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Calendario 4</div>
-    </div>
-
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Perfil 5</div>
-    </div>
-
-    <div class="categoria">
-      <ion-img class="iconos" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-      <div class="categoria-label">Buscar 6</div>
-    </div>
-  </div> -->
-
-<!-- iconos   -->
-<div class="categorias-contenedor" style="background-color: black;">
-  <div class="categoria">
-    <ion-icon class="iconos" style="color:#e50914" name="home"></ion-icon>
-    <div class="categoria-label" style="color:white">Categoría</div>
-  </div>
-
-  <div class="categoria">
-    <ion-icon class="iconos" name="cut-sharp"></ion-icon>
-    <div class="categoria-label">Categoría larga</div>
-  </div>
-
-  <div class="categoria">
-    <ion-icon class="iconos" name="pin"></ion-icon>
-    <div class="categoria-label">Pin</div>
-  </div>
-
-  <div class="categoria">
-    <ion-icon class="iconos" name="calendar-outline"></ion-icon>
-    <div class="categoria-label">Calendario</div>
-  </div>
-
-  <div class="categoria">
-    <ion-icon class="iconos" name="person-circle-outline"></ion-icon>
-    <div class="categoria-label">Perfil</div>
-  </div>
-
-  <div class="categoria">
-    <ion-icon class="iconos" name="search-outline"></ion-icon>
-    <div class="categoria-label">Buscar</div>
-  </div>
+  </swiper-slide>
+</swiper-container>
+<div align="center">
+<ion-icon class="icono" name="caret-down-circle-outline"></ion-icon>
 </div>
 
-
- 
-</ion-content>
+</ion-content>  
 
 <!-- ejemplos de como manejar las citas -->
-<!-- <ion-content> -->
+<!-- <ion-content>  -->
   <!-- mandamos atraer el componente card-entrada para mostrar las entradas registradas-->
-<!-- <app-card-entrada [entrada]="entradaActual" (eventoGuardar)="guardar($event)"></app-card-entrada> -->
-<!-- </ion-content> -->
+ <!-- <app-card-entrada [entrada]="entradaActual" (eventoGuardar)="guardar($event)"></app-card-entrada> -->
+ <!-- </ion-content> -->
 
 <ion-footer class="fondo-rojo2">
-  
-  <!-- Iconos de redes sociales Descomentar cuando quedemos de acuerdo dodne van a mostrarse-->
-  <!-- <ion-toolbar color="primary"> 
-     <div class="wrapper">
-      <a href="#"class="icon"><ion-icon class="fab fa-facebook"> </ion-icon> </a>
-      <a href="#"class="icon"><ion-icon class="fab fa-whatsapp"></ion-icon> </a>
-      <a href="#"class="icon"><ion-icon class="fab fa-instagram"></ion-icon> </a>
-      <a href="#"class="icon"><ion-icon class="fab fa-linkedin"></ion-icon> </a>
-     </div> 
-   </ion-toolbar> -->
-  <!--Esto es iconos sin texto  -->
   
   <ion-segment value="heart">
     <ion-segment-button value="home">

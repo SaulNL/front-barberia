@@ -128,3 +128,17 @@ ion-menu ion-content {
     position: relative;
     overflow: hidden;
 }
+.btn-salir{
+  background-color: transparent;
+  color:white;
+  padding: 15px;
+  font-size: 25px;
+  z-index: 10;
+  
+}
+
+.redes-sociales{
+  font-size: 1.9em;
+  display: flex;
+  justify-content: space-around;
+}

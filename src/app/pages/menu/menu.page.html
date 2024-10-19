@@ -1,10 +1,13 @@
 <ion-split-pane contentId="main">
   <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <ion-menu-toggle>
+    <ion-toolbar color="primary">    
+        <ion-title>Los mostacho</ion-title>
+          <span type="button" slot="end" class="btn-salir" style="z-index: 10;"><ion-icon style="z-index: 10;" name="close-outline"></ion-icon></span> 
+        </ion-toolbar>
+      </ion-menu-toggle>
+        
+      <!-- </ion-toolbar> -->
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let pagina of paginas; let i = index">
@@ -21,9 +24,16 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
+    
+     
+    
     </ion-content>
+    <p align="center">Contactanos</p>      
+    <div class="redes-sociales"> 
+      <a href="#"class="icon"><ion-icon class="fab fa-whatsapp"></ion-icon> </a>
+      <a href="#"class="icon"><ion-icon class="fab fa-instagram"></ion-icon> </a>
+     </div> 
   </ion-menu>
-
 <!-- ion-router-outlet 
  funciona como un z-index en css pero en este caso se aplican en html
  *siempre va a estar adelante de todos los page que existan
